@@ -5,7 +5,6 @@ This review snapshot contains the current no-prompt detector implementation, tra
 
 The experiments used Python 3.8, PyTorch 1.10.1+cu113, torchvision 0.11.2+cu113 and spconv-cu113 2.1.25. A compatible CUDA toolchain is required for the rotated-IoU extension. Install dependencies using `python -m pip install -r requirements.txt`. The requirements include runtime dependencies previously inherited from the development environment; installation in a fresh environment has not yet been certified.
 
-Run commands from the repository root. Set `CUDA_VISIBLE_DEVICES` for your machine. Do not use a multi-GPU run to reproduce the supplied single-GPU training results without documenting the change.
 
 ## Data and weights
 
