@@ -1,0 +1,131 @@
+{
+  "internal_train": {
+    "frames": 14149,
+    "frames_per_weather": {
+      "fog": 1488,
+      "heavysnow": 1624,
+      "lightsnow": 817,
+      "normal": 5218,
+      "overcast": 298,
+      "rain": 1788,
+      "sleet": 2916
+    },
+    "sequences": [
+      "1",
+      "2",
+      "3",
+      "5",
+      "6",
+      "7",
+      "9",
+      "10",
+      "11",
+      "12",
+      "14",
+      "15",
+      "17",
+      "18",
+      "19",
+      "21",
+      "22",
+      "24",
+      "25",
+      "26",
+      "28",
+      "29",
+      "30",
+      "31",
+      "32",
+      "34",
+      "36",
+      "37",
+      "38",
+      "40",
+      "41",
+      "42",
+      "44",
+      "45",
+      "46",
+      "47",
+      "48",
+      "49",
+      "50",
+      "51",
+      "52",
+      "53",
+      "54",
+      "56",
+      "57",
+      "58"
+    ]
+  },
+  "internal_val": {
+    "frames": 3309,
+    "frames_per_weather": {
+      "fog": 298,
+      "heavysnow": 246,
+      "lightsnow": 298,
+      "normal": 1162,
+      "overcast": 113,
+      "rain": 596,
+      "sleet": 596
+    },
+    "sequences": [
+      "4",
+      "8",
+      "13",
+      "16",
+      "20",
+      "23",
+      "27",
+      "33",
+      "35",
+      "39",
+      "43",
+      "55"
+    ]
+  },
+  "official_test_frames": 17536,
+  "official_test_sha256": "47c8c1883acf65ea2939db5b92588a5d5f66bc56471e6ba80a1c94a9961d1d2c",
+  "official_train_frames": 17458,
+  "official_train_sha256": "60de30c50ba17d361b2c2f4e687e6325b739cea8752cb48340c1e9748d826211",
+  "overlap_counts": {
+    "internal_train_test": 0,
+    "internal_train_val": 0,
+    "internal_val_test": 0,
+    "official_train_test": 0
+  },
+  "protocol": "K-Radar official split from local 3D-LRF checkout; official train is split by whole sequence for internal model selection",
+  "seed": 202206,
+  "source_test": "./resources/split/test.txt",
+  "source_train": "./resources/split/train.txt",
+  "val_ratio_target": 0.2,
+  "val_sequences_by_weather": {
+    "fog": [
+      "39"
+    ],
+    "heavysnow": [
+      "55"
+    ],
+    "lightsnow": [
+      "43"
+    ],
+    "normal": [
+      "4",
+      "8",
+      "16",
+      "20"
+    ],
+    "overcast": [
+      "13"
+    ],
+    "rain": [
+      "23",
+      "33"
+    ],
+    "sleet": [
+      "27",
+      "35"
+    ]
+  }
+}

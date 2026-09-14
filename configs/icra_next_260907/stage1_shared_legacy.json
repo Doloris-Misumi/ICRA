@@ -1,0 +1,11 @@
+{
+  "checkpoint": "./checkpoints/stage1_weather.pth",
+  "checkpoint_sha256": "a3ed4225f4708450f553bd8edf0c8e7ab4b1ac91cf3ff3b0fe63e6732b6c97f0",
+  "architecture": "ImageClsBackbone3DLRF",
+  "lineage_status": "unknown",
+  "fit_splits": null,
+  "selection_splits": null,
+  "preprocessing": "OpenCV BGR; first 1280 columns; ToTensor; normalize mean=std=0.5",
+  "known_reference_selection_rule": "models/img_cls/cls_train.py selects best by test accuracy",
+  "limitation": "The exact producing run/splits for this file are not established; do not certify outer validation or test independence."
+}
