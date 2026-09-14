@@ -20,8 +20,6 @@ The shared Stage 1 checkpoint belongs at `checkpoints/stage1_weather.pth`. Its e
 CUDA_VISIBLE_DEVICES=0 python main_train_0.py --config configs/train_full.yml
 ```
 
-This configuration trains for 20 epochs and uses internal validation. The paper's selected main checkpoint is zero-based `model_16.pt` (epoch 17). The component comparisons use epoch 10 (`model_9.pt`). Keep the 20-epoch learning-rate schedule when reproducing a 10-epoch prefix; changing the cosine horizon changes the experiment. `configs/icra_next_260907/A0_3dlrf_s202206.yml` retains the reference detector configuration.
-
 ## Evaluate the main table
 
 ```bash
