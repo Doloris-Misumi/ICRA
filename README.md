@@ -1,7 +1,6 @@
 # Anonymous implementation: Weather-Conditioned Branch Routing
 
-This review snapshot contains the current no-prompt detector implementation, training configuration, evaluation adapter and accelerated inference benchmark. Camera features condition the detector during both training and inference. Text prompts and contrastive alignment are disabled in the supplied configurations. Optional legacy modules remain for import/checkpoint compatibility; they are not evidence of an active prompt path.
-
+This review snapshot contains the current no-prompt detector implementation, training configuration, evaluation adapter and accelerated inference benchmark. Camera features condition the detector during both training and inference.
 ## Environment
 
 The experiments used Python 3.8, PyTorch 1.10.1+cu113, torchvision 0.11.2+cu113 and spconv-cu113 2.1.25. A compatible CUDA toolchain is required for the rotated-IoU extension. Install dependencies using `python -m pip install -r requirements.txt`. The requirements include runtime dependencies previously inherited from the development environment; installation in a fresh environment has not yet been certified.
