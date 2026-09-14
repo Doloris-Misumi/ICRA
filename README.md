@@ -16,6 +16,16 @@ Obtain K-Radar independently from its official distribution. No dataset, annotat
 
 ## Train
 
+Stage1
+
+```bash
+CUDA_VISIBLE_DEVICES=0 python models/img_cls/train_stage1_3dlrf.py \
+  --config configs/train_full.yml \
+  --epochs 100 --batch-size 16 \
+  --output-dir checkpoints/stage1
+```
+
+Stage2
 ```bash
 CUDA_VISIBLE_DEVICES=0 python main_train_0.py --config configs/train_full.yml
 ```
