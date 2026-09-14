@@ -12,7 +12,7 @@ Run commands from the repository root. Set `CUDA_VISIBLE_DEVICES` for your machi
 
 Obtain K-Radar independently from its official distribution. No dataset, annotations, checkpoints, training logs or compiled binaries are bundled. Place or link the dataset at `data/k_radar_dataset`, or edit `DATASET.DIR.LIST_DIR` in the configuration you use.
 
-The shared Stage 1 checkpoint belongs at `checkpoints/stage1_weather.pth`. Its expected checksum and the known limits of its training lineage are in `configs/icra_next_260907/stage1_shared_legacy.json`. The checkpoint is not included and no download is currently provided by this snapshot. Training a replacement is possible, but does not reproduce the same fixed frontend. Detector checkpoints must likewise be supplied separately.
+
 
 ## Train
 
@@ -29,9 +29,7 @@ CUDA_VISIBLE_DEVICES=0 python tools/evaluate_paper.py \
   --checkpoint checkpoints/model_16.pt --epoch 16
 ```
 
-The preparation command rebuilds annotations from the local dataset, without redistributing them. It uses the supplied 10,065-frame manifest and calibrated, inclusive Sedan ROI filtering. The generated annotations were checked against every annotation used by the main-table experiment: all 10,065 frames and 18,874 objects match exactly. See `docs/evaluation_protocol.md`.
 
-Do not substitute the generic `main_cond_0.py` entry point for this adapter: that entry point serves other development protocols and is retained for compatibility.
 
 ## Accelerated inference benchmark
 
@@ -43,13 +41,8 @@ python tools/benchmark_wcbr_fast_post_cached.py \
   --output outputs/benchmark.json --verify
 ```
 
-Create `outputs/` first with `mkdir -p outputs`. Use a new output filename for each run. The benchmark samples 120 frames from the parent 17,536-frame test list: 20 warm-up and 100 timed frames. It uses batch size 1, FP32 with backend TF32 settings, includes model preprocessing/forward and postprocessing, and excludes data loading. `--verify` checks the optimized postprocessing against its original counterpart on the benchmark frames. Exact KNN does not imply bitwise equivalence of the entire accelerated backbone.
 
-The original backbone and accelerated implementation are separate files. The main AP protocol and the timing protocol are not interchangeable; the full AP table was not regenerated with the latest cached postprocessing optimization.
 
-## Loss ablations
-
-`configs/ablations/` supplies 10-epoch loss-weight variants with the same 20-epoch learning-rate horizon. Run the training entry point with the selected configuration, then evaluate `model_9.pt` using `tools/evaluate_paper.py --epoch 9` and that configuration. Validation is disabled in these short runs and testing is an explicit separate command. The model module implementations have not been changed for this release.
 
 ## Review snapshot
 
